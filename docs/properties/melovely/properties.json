@@ -1,0 +1,56 @@
+{
+	"customer":"melovely",
+	"customerWebsite":"http://www.melovely.de/",
+	"customerLogo":"http://3.bp.blogspot.com/-jSpeYVZ5fzQ/TwHWfr9JHTI/AAAAAAAAAhQ/I1fS7GE_o64/s400/melovely.png",
+	"attributes":[
+                    {
+
+                  "name":"name",
+                  "weight":50,
+                  "type":"unstruct"
+                  },
+                  {
+                  "name":"description",
+                  "weight":50,
+                  "type":"unstruct"
+                  },
+
+                   {
+                   "name":"meta_keyword",
+                   "weight":30,
+                   "type":"unstruct"
+                   },
+                   {
+                   "name":"style",
+                   "weight":20,
+                   "type":"struct"
+                   },
+                   {
+                   "name":"material",
+                   "weight":40,
+                   "type":"struct"
+                   },
+                   {
+                   "name":"manufacturer",
+                   "weight":20,
+                   "type":"struct"
+                   },
+                   {
+                   "name":"color_primary",
+                   "weight":200,
+                   "type":"struct"
+                   },
+                   {
+                   "name":"gender",
+                   "weight":100,
+                   "type":"struct"
+                   },
+                   {
+                   "name":"category",
+                   "weight":40,
+                   "type":"cat"
+                   }
+
+
+	]
+}

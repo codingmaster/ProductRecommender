@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<entry key="GRAPH_SIZES">
+		SELECT ?g (COUNT(*) as ?count) { GRAPH ?g {?s ?p ?o.}
+		}
+		GROUP BY ?g
+		ORDER BY DESC(?count)
+	</entry>
+	<entry key="ATTRIBUTE_ENTITY_LIST">
+		Select ?uri ?attribute_type ?count
+		$FROM_CLAUSE$
+		where{
+		$PRODUCT1$ prop:prod_attribute ?attribute.
+		?attribute ?attribute_type
+		?attribute_value.
+		?attribute_entity prop:entity_attribute ?attribute;
+		prop:entity ?uri;
+		prop:entity_weight ?count.
+		}
+	</entry>
+	<entry key="GET_ALL_ENTITIES">
+		Select distinct ?uri
+		$FROM_CLAUSE$
+		where{
+		?attribute_entity prop:entity ?uri.
+		}
+	</entry>
+	<entry key="GET_ALL_DBPEDIA_ENTITIES">
+		Select distinct ?uri
+		$FROM_CLAUSE$
+		where{
+		?attribute_entity prop:entity ?uri.
+		FILTER (REGEX(?uri,
+		$DBPEDIA_PREFIX$, "i"))
+		}
+	</entry>
+
+	<entry key="IS_PRODUCT_EXISTS">
+		SELECT ?p ?o
+		$FROM_CLAUSE$
+		WHERE
+		{
+		$PRODUCT1$ ?p ?o.
+		}
+	</entry>
+
+    <entry key="PRODUCT_SIMILARITY">
+        select (sum(?attribute_weight * ?simvalue
+        *(?weight + ?weight2)/2)
+        as ?count)
+
+        $FROM_CLAUSE$
+
+        where{
+
+        # product 1
+        $PRODUCT1$ prop:prod_attribute ?attribute.
+        ?attribute_entity
+        prop:entity_attribute ?attribute.
+        ?attribute ?attribute_type
+        ?attribute_value.
+        ?attribute_entity prop:entity ?entity.
+        ?attribute_entity prop:entity_weight ?weight.
+
+        # product 2
+        $PRODUCT2$
+        prop:prod_attribute ?attribute2.
+        ?attribute_entity2
+        prop:entity_attribute ?attribute2.
+        ?attribute2 ?attribute_type
+        ?attribute_value2.
+        ?attribute_entity2 prop:entity ?entity2.
+        ?attribute_entity2 prop:entity_weight ?weight2.
+
+        # similar entities
+        ?s prop:sim_entity1 ?entity.
+        ?s prop:sim_entity2 ?entity2.
+        ?s prop:sim_value ?simvalue.
+
+        # attribute weights
+        ?attribute_type
+        prop:attribute_weight ?attribute_weight.
+
+       }
+
+    </entry>
+
+	<entry key="PRODUCTS_WITH_SIMILAR_ENTITIES">
+		select ?product (sum(?attribute_weight * ?simvalue
+		*(?weight + ?weight2)/2)
+		as ?count)
+
+		$FROM_CLAUSE$
+
+		where{
+
+		# product 1
+		$PRODUCT1$ prop:prod_attribute ?attribute.
+		?attribute_entity
+		prop:entity_attribute ?attribute.
+		?attribute ?attribute_type
+		?attribute_value.
+		?attribute_entity prop:entity ?entity.
+		?attribute_entity prop:entity_weight ?weight.
+
+		# product 2
+		?product
+		prop:prod_attribute ?attribute2.
+		?attribute_entity2
+		prop:entity_attribute ?attribute2.
+		?attribute2 ?attribute_type
+		?attribute_value2.
+		?attribute_entity2 prop:entity ?entity2.
+		?attribute_entity2 prop:entity_weight ?weight2.
+
+		# similar entities
+		?s
+		prop:sim_entity1 ?entity.
+		?s prop:sim_entity2 ?entity2.
+		?s
+		prop:sim_value ?simvalue.
+
+		# attribute weights
+		?attribute_type
+		prop:attribute_weight ?attribute_weight.
+
+		FILTER(?simvalue >=
+		$MIN_ENTITY_THRESHOLD$
+		&amp;&amp; ?simvalue &lt;=
+		$MAX_ENTITY_THRESHOLD$ )
+		}
+		group by ?product
+		order by
+		desc(2)
+
+	</entry>
+	<entry key="SIMILAR_ENTITIES_BETWEEN_PRODUCTS">
+		select ?entity ?count ?entity2 ?count2
+		?attribute_type
+		?simvalue
+		?attribute_weight
+		$FROM_CLAUSE$
+
+		where{
+		{
+		# product 1
+		$PRODUCT1$
+		prop:prod_attribute ?attribute.
+		?attribute_entity
+		prop:entity_attribute
+		?attribute;
+		prop:entity ?entity;
+		prop:entity_weight ?count.
+		?attribute
+		?attribute_type ?attribute_value.
+
+		# product 2
+		$PRODUCT2$
+		prop:prod_attribute ?attribute2.
+		?attribute_entity2
+		prop:entity_attribute ?attribute2;
+		prop:entity
+		?entity2;
+		prop:entity_weight ?count2.
+		?attribute2 ?attribute_type
+		?attribute_value2.
+
+
+		# attribute weights
+		?attribute_type
+		prop:attribute_weight ?attribute_weight.
+
+		# similar entities
+		?s
+		prop:sim_entity1 ?entity;
+		prop:sim_entity2 ?entity2;
+		prop:sim_value
+		?simvalue.
+		
+		FILTER(?simvalue >= $MIN_ENTITY_THRESHOLD$
+		&amp;&amp;
+		?simvalue &lt;= $MAX_ENTITY_THRESHOLD$)
+		}
+		UNION{
+		$PRODUCT1$ prop:prod_attribute ?attribute.
+		?attribute_entity
+		prop:entity_attribute ?attribute;
+		prop:entity ?entity;
+		prop:entity_weight ?count.
+		?attribute ?attribute_type ?attribute_value.
+		?attribute_type prop:attribute_weight ?attribute_weight.
+		}
+
+		UNION{
+		$PRODUCT2$
+		prop:prod_attribute ?attribute2.
+		?attribute_entity2
+		prop:entity_attribute ?attribute2;
+		prop:entity ?entity2;
+		prop:entity_weight ?count2.
+		?attribute2 ?attribute_type
+		?attribute_value2.
+		?attribute_type prop:attribute_weight
+		?attribute_weight.}
+		}
+
+	</entry>
+</properties>

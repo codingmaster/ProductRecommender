@@ -1,0 +1,16 @@
+aroma,mit Aroma,mit Aroma,1.0000
+aroma,mit Aroma,ohne Aroma,0.2520
+aroma,mit Aroma,natürliches Aroma,0.4650
+aroma,mit Aroma,Vitaminzusatz,0.0823
+aroma,natürliches Aroma,natürliches Aroma,1.0000
+aroma,natürliches Aroma,ohne Aroma,0.1510
+aroma,natürliches Aroma,mit Aroma,0.4650
+aroma,natürliches Aroma,Vitaminzusatz,0.2728
+aroma,ohne Aroma,ohne Aroma,1.0000
+aroma,ohne Aroma,mit Aroma,0.2520
+aroma,ohne Aroma,natürliches Aroma,0.1510
+aroma,ohne Aroma,Vitaminzusatz,0.0838
+aroma,Vitaminzusatz,Vitaminzusatz,1.0000
+aroma,Vitaminzusatz,natürliches Aroma,0.2728
+aroma,Vitaminzusatz,ohne Aroma,0.0838
+aroma,Vitaminzusatz,mit Aroma,0.0823

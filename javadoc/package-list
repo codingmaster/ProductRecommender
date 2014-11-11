@@ -1,0 +1,15 @@
+de.hpi.semrecsys
+de.hpi.semrecsys.config
+de.hpi.semrecsys.main
+de.hpi.semrecsys.model
+de.hpi.semrecsys.output
+de.hpi.semrecsys.persistence
+de.hpi.semrecsys.populator
+de.hpi.semrecsys.simentity
+de.hpi.semrecsys.similarity
+de.hpi.semrecsys.similarity.category
+de.hpi.semrecsys.spotlight
+de.hpi.semrecsys.strategy
+de.hpi.semrecsys.utils
+de.hpi.semrecsys.virtuoso
+de.hpi.semrecsys.webservice

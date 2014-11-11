@@ -1,0 +1,82 @@
+{
+  "@text": "text=President Obama called Wednesday on Congress to extend a tax break for students included in last year's economic stimulus package, arguing that the policy provides more generous assistance",
+  "@confidence": "0.2",
+  "@support": "20",
+  "@types": "",
+  "@sparql": "",
+  "@policy": "whitelist",
+  "Resources":   [
+        {
+      "@URI": "http://dbpedia.org/resource/Presidency_of_Barack_Obama",
+      "@support": "134",
+      "@types": "DBpedia:OfficeHolder,DBpedia:Person,Schema:Person,Freebase:/book/book_subject,Freebase:/book,Freebase:/book/periodical_subject,Freebase:/media_common/quotation_subject,Freebase:/media_common,DBpedia:TopicalConcept",
+      "@surfaceForm": "President Obama",
+      "@offset": "5",
+      "@similarityScore": "0.17918290197849274",
+      "@percentageOfSecondRank": "-1.0"
+    },
+        {
+      "@URI": "http://dbpedia.org/resource/Sheffield_Wednesday_F.C.",
+      "@support": "1850",
+      "@types": "DBpedia:SoccerClub,DBpedia:SportsTeam,DBpedia:Organisation,Schema:Organization,Schema:SportsTeam,Freebase:/soccer/football_team,Freebase:/soccer,Freebase:/sports/sports_team,Freebase:/sports,DBpedia:TopicalConcept",
+      "@surfaceForm": "Wednesday",
+      "@offset": "28",
+      "@similarityScore": "0.059119582176208496",
+      "@percentageOfSecondRank": "0.7888147494308684"
+    },
+        {
+      "@URI": "http://dbpedia.org/resource/United_States_Congress",
+      "@support": "7343",
+      "@types": "Freebase:/protected_sites/natural_or_cultural_preservation_agency,Freebase:/protected_sites,Freebase:/book/book_subject,Freebase:/book,Freebase:/award/award_presenting_organization,Freebase:/award,Freebase:/government/governmental_body,Freebase:/government,Freebase:/business/employer,Freebase:/business,Freebase:/architecture/architectural_structure_owner,Freebase:/architecture,Freebase:/people/appointer,Freebase:/people,Freebase:/book/author,Freebase:/media_common/dedicator,Freebase:/media_common",
+      "@surfaceForm": "Congress",
+      "@offset": "41",
+      "@similarityScore": "0.1285077929496765",
+      "@percentageOfSecondRank": "0.7525287534386548"
+    },
+        {
+      "@URI": "http://dbpedia.org/resource/Student",
+      "@support": "1222",
+      "@types": "Freebase:/business/job_title,Freebase:/business,Freebase:/fictional_universe/fictional_job_title,Freebase:/fictional_universe,Freebase:/film/film_festival_focus,Freebase:/film,Freebase:/fictional_universe/character_occupation,Freebase:/people/profession,Freebase:/people,Freebase:/visual_art/art_subject,Freebase:/visual_art,Freebase:/fictional_universe/character_rank,Freebase:/media_common/quotation_subject,Freebase:/media_common,Freebase:/book/book_subject,Freebase:/book,DBpedia:TopicalConcept",
+      "@surfaceForm": "students",
+      "@offset": "76",
+      "@similarityScore": "0.13298861682415009",
+      "@percentageOfSecondRank": "-1.0"
+    },
+        {
+      "@URI": "http://dbpedia.org/resource/University",
+      "@support": "5001",
+      "@types": "Freebase:/organization/organization_type,Freebase:/organization,Freebase:/business/company_type,Freebase:/business,Freebase:/tv/tv_subject,Freebase:/tv,Freebase:/education/school_type,Freebase:/education,Freebase:/book/book_subject,Freebase:/book,Freebase:/fictional_universe/type_of_fictional_setting,Freebase:/fictional_universe,Freebase:/architecture/building_function,Freebase:/architecture,DBpedia:TopicalConcept",
+      "@surfaceForm": "year",
+      "@offset": "102",
+      "@similarityScore": "0.1001419946551323",
+      "@percentageOfSecondRank": "0.8670538302282054"
+    },
+        {
+      "@URI": "http://dbpedia.org/resource/Packaging_and_labeling",
+      "@support": "55",
+      "@types": "Freebase:/book/book_subject,Freebase:/book",
+      "@surfaceForm": "package",
+      "@offset": "127",
+      "@similarityScore": "0.07158408313989639",
+      "@percentageOfSecondRank": "0.4938189624674732"
+    },
+        {
+      "@URI": "http://dbpedia.org/resource/Policy",
+      "@support": "484",
+      "@types": "Freebase:/media_common/quotation_subject,Freebase:/media_common,DBpedia:TopicalConcept",
+      "@surfaceForm": "policy",
+      "@offset": "153",
+      "@similarityScore": "0.15307757258415222",
+      "@percentageOfSecondRank": "-1.0"
+    },
+        {
+      "@URI": "http://dbpedia.org/resource/Assistance_dog",
+      "@support": "67",
+      "@types": "DBpedia:TopicalConcept",
+      "@surfaceForm": "assistance",
+      "@offset": "183",
+      "@similarityScore": "0.08323978632688522",
+      "@percentageOfSecondRank": "-1.0"
+    }
+  ]
+}

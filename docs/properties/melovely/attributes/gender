@@ -1,0 +1,16 @@
+gender,Für Frauen,Für Männer,0.0409
+gender,Für Frauen,Unisex,0.73
+gender,Für Frauen,Für Kids,0.0255
+gender,Für Kids,Für Kids,1.0000
+gender,Für Kids,Für Männer,0.3477
+gender,Für Kids,Unisex,0.3377
+gender,Für Kids,Für Frauen,0.0255
+gender,Für Männer,Für Männer,1.0000
+gender,Für Männer,Unisex,0.5801
+gender,Für Männer,Für Kids,0.3477
+gender,Für Männer,Für Frauen,0.0409
+gender,Unisex,Unisex,1.0000
+gender,Unisex,Für Männer,0.5801
+gender,Unisex,Für Kids,0.3377
+gender,Unisex,Für Frauen,0.73
+gender,Für Frauen,Für Frauen,1.0000
